@@ -58,6 +58,12 @@ podTemplate(
         stage("Deploy to production environment") {
             deployToEB('production')
         }
+            
+            for (int i=0; i < 20; i++) {
+                    stage("Deploy to production ${i} environment") {
+                            echo "deploy ${i}" 
+                        }
+            }
     }
   }
 }
